@@ -5,6 +5,7 @@ import 'package:task_manager_app/ui/screens/completed_task_screen.dart';
 import 'package:task_manager_app/ui/screens/new_task_screen.dart';
 import 'package:task_manager_app/ui/screens/progress_task_screen.dart';
 import 'package:task_manager_app/utils/apps_color.dart';
+import 'package:task_manager_app/widget/tm_app_bar_widget.dart';
 
 class MainBottomNavScreen extends StatefulWidget {
   const MainBottomNavScreen({super.key});
@@ -24,28 +25,7 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppsColor.themecolor,
-        title: Row(
-          children: [
-            CircleAvatar(
-              radius: 20,
-              backgroundColor: Colors.white,
-            ),
-            const SizedBox(width: 5,),
-            Expanded(
-              child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Atikul Islam',style: TextStyle(fontSize: 14,color: Colors.white,fontWeight: FontWeight.w600),),
-                Text('atikul.islam.atik@gmail.com',style: TextStyle(fontSize: 10,color: Colors.white),),
-              ],
-            ),
-            ),
-            IconButton(onPressed: (){}, icon: Icon(Icons.logout)),
-          ],
-        ),
-      ),
+      appBar: TMAppBar(),
       body: _screens[_selectedIndex],
       bottomNavigationBar: NavigationBar(
         selectedIndex: _selectedIndex,
@@ -63,3 +43,5 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
     );
   }
 }
+
+
