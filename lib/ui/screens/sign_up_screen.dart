@@ -4,7 +4,14 @@ import 'package:task_manager_app/utils/apps_color.dart';
 import 'package:task_manager_app/widget/screen_background.dart';
 
 class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({super.key});
+   SignUpScreen({super.key});
+
+  final GlobalKey<FormState> _formkey=GlobalKey<FormState>();
+  final TextEditingController email=TextEditingController();
+  final TextEditingController firstName=TextEditingController();
+  final TextEditingController lastName=TextEditingController();
+  final TextEditingController mobile=TextEditingController();
+  final TextEditingController password=TextEditingController();
 
   @override
   State<SignUpScreen> createState() => _SignUpScreenState();
